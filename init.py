@@ -7,14 +7,12 @@ import time
 
 
 def show_log(info):
-
     "显示日志"
 
     print time.strftime("%H:%M:%S ") + info
 
 
 def mkdir_and_mkfile(dir_name, file_name_list):
-
     "创建指定目录并在目录内添加指定文件"
 
     if os.path.exists(dir_name):
@@ -26,10 +24,10 @@ def mkdir_and_mkfile(dir_name, file_name_list):
         for file_name in file_name_list:
             # 创建指定文件
             text_file = open('./' + dir_name + '/' + file_name, 'w')
-            if file_name[len(file_name) - 2 : ] == 'py':
+            if file_name[len(file_name) - 2:] == 'py':
                 # 识别 .py 文件加入 utf-8 声明
                 text_file.writelines('# -*- coding: utf-8 -*-')
-            elif file_name[len(file_name) - 2 : ] == 'md':
+            elif file_name[len(file_name) - 2:] == 'md':
                 # 识别 .md 文件加入标题
                 data = '# Example ' + dir_name + '\n' * 2
                 data += '## Description' + '\n' * 4
